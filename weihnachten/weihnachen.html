@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wesołych Świąt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(#ffdde1, #ffffff);
+      text-align: center;
+      padding: 40px;
+    }
+    .box {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #c2185b;
+    }
+    button {
+      margin: 10px;
+      padding: 15px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #f06292;
+      color: white;
+    }
+    button:hover {
+      background-color: #ec407a;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="box" id="start">
+    <h1>🎄 Wesołych Świąt Mamo! 🎄</h1>
+    <p>Mam dla Ciebie mały prezent ❤️</p>
+    <button onclick="showGifts()">Zobacz prezenty</button>
+  </div>
+
+  <div class="box" id="gifts" style="display:none;">
+    <h2>Wybierz swój bon 🎁</h2>
+    <button onclick="choose('10x odkurzanie')">🧹 10x odkurzanie</button>
+    <button onclick="choose('5x mycie podłóg')">🧽 5x mycie podłóg</button>
+    <button onclick="choose('Dzień pomocy bez narzekania')">❤️ Dzień pomocy bez narzekania</button>
+  </div>
+
+  <div class="box" id="result" style="display:none;">
+    <h2>Dziękuję za wybór! 💝</h2>
+    <p id="chosenText"></p>
+    <p>Kocham Cię ❤️</p>
+  </div>
+
+  <script>
+    function showGifts() {
+      document.getElementById("start").style.display = "none";
+      document.getElementById("gifts").style.display = "block";
+    }
+
+    function choose(text) {
+      document.getElementById("gifts").style.display = "none";
+      document.getElementById("result").style.display = "block";
+      document.getElementById("chosenText").innerText =
+        "Wybrałaś: " + text;
+    }
+  </script>
+
+</body>
+</html>
